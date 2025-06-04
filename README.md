@@ -22,6 +22,6 @@ Você pode acessar o site hospedado clicando no link abaixo:
 4. Todos os dados ficam salvos no navegador (localStorage).
 
 ## ✍️ Autores e seus Feitos
-Gabriel Santos Palermo – Código Fonte
-Alisson Klem - Modelagem de Banco de Dados
-Vinicíus Luiz Rocha - Modelagem de Sistemas
+| Gabriel Santos Palermo – Código Fonte 
+| Alisson Klem - Modelagem de Banco de Dados 
+| Vinicíus Luiz Rocha - Modelagem de Sistemas 
