@@ -13,7 +13,7 @@ Este sistema permite o cadastro, listagem e gerenciamento de produtos relacionad
 ## 🚀 Acesso ao Projeto
 Você pode acessar o site hospedado clicando no link abaixo:
 
-👉 [Acesse a aplicação aqui](https://SEU-LINK-NETLIFY.netlify.app)
+👉 [Acesse a aplicação aqui](https://embutidos-defumados.netlify.app/)
 
 ## 📂 Como usar
 1. Acesse o link acima.
