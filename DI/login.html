@@ -1,0 +1,60 @@
+<!-- Página de acesso Login | ADMINISTRADOR --> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Configura a visualização para dispositivos móveis -->
+  <title>Login Administrativo</title> <!-- Título da página -->
+  <link rel="stylesheet" href="css/login.css" /> <!-- Link para o arquivo CSS de estilo -->
+  <link rel="icon" href="img/icon.png"> <!-- Ícone da aba do navegador -->
+</head>
+<body>
+
+  <header> <!-- Configuração topo da página -->
+    <div class="container logo-area">
+      <img src="img/Logo.png" alt="Logo" class="logo"> <!-- Logo da empresa -->
+      <h1>Sabor da Colônia</h1> <!-- Nome da empresa -->
+    </div>
+  </header>
+
+  <main>
+    <h2>Login do Administrador</h2> <!-- Título do formulário de login -->
+    <form id="loginForm"> <!-- Formulário de login com ID 'loginForm' -->
+      <label for="usuario">Usuário:</label> <!-- Rótulo para o campo de usuário -->
+      <input type="text" id="usuario" required /> <!-- Campo de entrada para o nome de usuário, obrigatório -->
+
+      <label for="senha">Senha:</label> <!-- Rótulo para o campo de senha -->
+      <input type="password" id="senha" required /> <!-- Campo de entrada para a senha, obrigatório -->
+
+      <button type="submit">Entrar</button> <!-- Botão para enviar o formulário -->
+      <div id="erro"></div> <!-- Div para exibir mensagens de erro -->
+    </form>
+  </main>
+
+  <!-- Rodapé da Página -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Sabor da Colônia. Todos os direitos reservados.</p> <!-- Mensagem de direitos autorais -->
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Adiciona um evento ao formulário para lidar com o envio
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Impede o envio padrão do formulário
+
+      const usuario = document.getElementById('usuario').value; // Obtém o valor do campo de usuário
+      const senha = document.getElementById('senha').value; // Obtém o valor do campo de senha
+
+      // Verifica se o usuário e a senha estão corretos
+      if (usuario === 'admin' && senha === '1234') {
+        localStorage.setItem('autenticado', 'true'); // Armazena a informação de autenticação no localStorage
+        window.location.href = 'cadastro_produtos.html'; // Redireciona para a página de cadastro de produtos
+      } else {
+        document.getElementById('erro').textContent = 'Usuário ou senha incorretos.'; // Exibe mensagem de erro
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!-- Página de vizualização de Produtos Cadastrados | ADMINISTRADOR --> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Configura a visualização para dispositivos móveis -->
+  <title>Produtos - Embutidos & Defumados</title> <!-- Título da página -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Link para o arquivo CSS de estilo -->
+  <link rel="icon" href="img/icon.png"> <!-- Ícone da aba do navegador -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"> <!-- Link para o Font Awesome -->
+  <style>
+    /* Estilos existentes */
+    main {
+      max-width: 1000px; /* Largura máxima do conteúdo principal */
+      margin: 0 auto; /* Centraliza o conteúdo */
+      padding: 30px; /* Espaçamento interno */
+      background-color: rgba(244, 237, 227, 0.95); /* Cor de fundo com transparência */
+      border-radius: 15px; /* Bordas arredondadas */
+      box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3); /* Sombra ao redor do conteúdo */
+    }
+
+    h2 {
+      text-align: center; /* Centraliza o texto */
+      font-family: 'Pacifico', cursive; /* Fonte personalizada */
+      font-size: 2.5rem; /* Tamanho da fonte */
+      margin-bottom: 25px; /* Margem inferior */
+      color: var(--marrom-escuro); /* Cor do texto */
+    }
+
+    .search-box {
+      display: flex; /* Exibe os elementos em linha */
+      justify-content: space-between; /* Espaça os elementos */
+      gap: 10px; /* Espaçamento entre os elementos */
+      margin-bottom: 25px; /* Margem inferior */
+    }
+
+    .search-box input {
+      flex: 1; /* O campo de entrada ocupa o espaço disponível */
+      padding: 12px; /* Espaçamento interno */
+      border: 2px solid var(--laranja-terroso); /* Borda do campo */
+      border-radius: 12px; /* Bordas arredondadas */
+      font-size: 1rem; /* Tamanho da fonte */
+    }
+
+    .search-box button {
+      padding: 12px 20px; /* Espaçamento interno do botão */
+      border: none; /* Sem borda */
+      border-radius: 12px; /* Bordas arredondadas */
+      background-color: var(--vermelho-queimado); /* Cor de fundo do botão */
+      color: white; /* Cor do texto do botão */
+      font-weight: bold; /* Negrito */
+      cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+      transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+    }
+
+    .search-box button:hover {
+      background-color: #7a1d17; /* Cor de fundo ao passar o mouse */
+    }
+
+    table {
+      width: 100%; /* Largura total da tabela */
+      border-collapse: collapse; /* Remove espaços entre as bordas das células */
+      margin-top: 15px; /* Margem superior */
+      background-color: white; /* Cor de fundo da tabela */
+      border-radius: 12px; /* Bordas arredondadas */
+      overflow: hidden; /* Oculta bordas que ultrapassam o limite */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra ao redor da tabela */
+    }
+
+    th, td {
+      padding: 14px; /* Espaçamento interno das células */
+      text-align: left; /* Alinhamento do texto à esquerda */
+      border-bottom: 1px solid #ddd; /* Borda inferior das células */
+    }
+
+    th {
+      background-color: var(--marrom-escuro); /* Cor de fundo do cabeçalho */
+      color: var(--bege-claro); /* Cor do texto do cabeçalho */
+    }
+
+    tr:hover {
+      background-color: #f1f1f1; /* Cor de fundo ao passar o mouse sobre a linha */
+    }
+  </style>
+</head>
+<body>
+  <header> <!-- Configuração topo da página -->
+    <div class="container">
+      <div class="logo-area">
+        <img src="img/Logo.png" alt="Logo" class="logo"> <!-- Logo da empresa -->
+        <h1>Embutidos & Defumados</h1> <!-- Nome da empresa -->
+      </div>
+      <nav>
+        <ul>
+          <li><a href="cadastro_produtos.html"><i class="fas fa-home"></i> Início</a></li> <!-- Link para a página inicial -->
+          <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li> <!-- Link para o dashboard -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2>Lista de Produtos</h2> <!-- Título da seção de produtos -->
+    <div class="search-box">
+      <input type="text" id="buscaProduto" placeholder="Buscar por nome ou tipo..."> <!-- Campo de busca -->
+      <button id="btnBuscar"><i class="fas fa-search"></i> Buscar</button> <!-- Botão de busca -->
+    </div>
+
+    <table id="tabelaProdutos"> <!-- Tabela para exibir produtos -->
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Peso</th>
+          <th>Preço (Kg)</th>
+          <th>Quantidade</th>
+          <th>Validade (Lote)</th> 
+        </tr>
+      </thead>
+      <tbody id="listaProdutos"></tbody> <!-- Corpo da tabela onde os produtos serão exibidos -->
+    </table>
+  </main>
+
+  <!-- Rodapé da Página -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Sabor da Colônia - Todos os direitos reservados.</p> <!-- Mensagem de direitos autorais -->
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Verifica se o usuário está autenticado
+    if (localStorage.getItem('autenticado') !== 'true') {
+      window.location.href = 'login.html'; // Redireciona para a página de login se não estiver autenticado
+    }
+
+    const produtos = JSON.parse(localStorage.getItem('produtos')) || []; // Obtém a lista de produtos do localStorage
+    const tbody = document.getElementById('listaProdutos'); // Obtém o corpo da tabela
+    const buscaProduto = document.getElementById('buscaProduto'); // Obtém o campo de busca
+    const btnBuscar = document.getElementById('btnBuscar'); // Obtém o botão de busca
+
+    // Função para exibir produtos na tabela
+    function exibirProdutos(produtosFiltrados) {
+      tbody.innerHTML = ''; // Limpa a tabela antes de inserir novos produtos
+      produtosFiltrados.forEach(produto => {
+        const tr = document.createElement('tr'); // Cria uma nova linha na tabela
+        tr.innerHTML = `
+          <td>${produto.nome}</td>
+          <td>${produto.tipo}</td>
+          <td>${produto.peso} ${produto.unidadePeso}</td>
+          <td>R$ ${parseFloat(produto.preco).toFixed(2)}</td>
+          <td>${produto.quantidade}</td>
+          <td>${produto.validade}</td>
+        `;
+        tbody.appendChild(tr); // Adiciona a nova linha ao corpo da tabela
+      });
+    }
+
+    // Exibe todos os produtos inicialmente
+    exibirProdutos(produtos);
+
+    // Função de busca
+    btnBuscar.addEventListener('click', () => {
+      const termoBusca = buscaProduto.value.toLowerCase(); // Obtém o termo de busca em minúsculas
+      const produtosFiltrados = produtos.filter(produto => 
+        produto.nome.toLowerCase().includes(termoBusca) || // Filtra produtos pelo nome
+        produto.tipo.toLowerCase().includes(termoBusca) // Filtra produtos pelo tipo
+      );
+      exibirProdutos(produtosFiltrados); // Exibe os produtos filtrados
+    });
+
+    // Adiciona funcionalidade de busca ao pressionar Enter
+    buscaProduto.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        btnBuscar.click(); // Simula um clique no botão de busca ao pressionar Enter
+      }
+    });
+  </script>
+
+</body>
+</html>
