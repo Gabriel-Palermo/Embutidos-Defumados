@@ -26,3 +26,6 @@ Você pode acessar o site hospedado clicando no link abaixo:
 - Gabriel Santos Palermo – Código Fonte
 - Alisson Klem - Modelagem de Banco de Dados
 - Vinicíus Luiz Rocha - Modelagem de Sistemas 
+
+## 🎥 Link Apresentação
+- https://youtu.be/OJ8-nxS64T4?si=ntbOTNMM-a9dY5qP
