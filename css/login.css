@@ -1,0 +1,209 @@
+/* === CSS para página de LOGIN === */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap'); /* Importa fontes do Google Fonts */
+
+/* === SET DE CORES UTILIZADAS NA PÁGINA === */
+:root {
+  --marrom-escuro: #5a2e0c; /* Cor marrom escuro */
+  --vermelho-queimado: #a83226; /* Cor vermelho queimado */
+  --bege-claro: #f4ede3; /* Cor bege claro */
+  --laranja-terroso: #d96c3b; /* Cor laranja terroso */
+  --texto-escuro: #3b2f2f; /* Cor do texto escuro */
+  --fundo-textura: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Imagem de fundo */
+}
+
+/* === ESTILIZAÇÃO DO CORPO DA PÁGINA === */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Define a fonte do corpo */
+  background-color: var(--bege-claro); /* Cor de fundo */
+  background-image: var(--fundo-textura); /* Imagem de fundo */
+  color: var(--texto-escuro); /* Cor do texto */
+  display: flex; /* Exibe como flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Altura total da viewport */
+  padding: 20px; /* Preenchimento */
+}
+
+/* === CONTAINER DO LOGIN === */
+.login-container {
+  background-color: rgba(244, 237, 227, 0.95); /* Fundo translúcido */
+  padding: 40px 30px; /* Preenchimento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3); /* Sombra ao redor do container */
+  max-width: 400px; /* Largura máxima do container */
+  width: 100%; /* Largura total */
+}
+
+/* === TÍTULO === */
+h2 {
+  font-family: 'Pacifico', cursive; /* Fonte para o título */
+  text-align: center; /* Centraliza o texto */
+  font-size: 2.2rem; /* Tamanho da fonte */
+  color: var(--marrom-escuro); /* Cor do texto */
+  margin-bottom: 25px; /* Margem inferior */
+  text-shadow: 1px 1px 2px var(--laranja-terroso); /* Sombra do texto */
+}
+
+/* === CAMPOS === */
+label {
+  display: block; /* Exibe como bloco */
+  font-weight: 700; /* Negrito */
+  margin-bottom: 8px; /* Margem inferior */
+  color: var(--marrom-escuro); /* Cor do texto */
+  letter-spacing: 0.02em; /* Espaçamento entre letras */
+  margin-top: 20px; /* Margem superior */
+}
+
+/* === ALTERAÇÃO DOS CAMPOS === */
+input {
+  width: 93%; /* Largura do campo */
+  padding: 12px; /* Preenchimento interno */
+  border: 2px solid var(--laranja-terroso); /* Borda */
+  border-radius: 12px; /* Bordas arredondadas */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  background-color: #fff8f0; /* Cor de fundo */
+  color: var(--marrom-escuro); /* Cor do texto */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave para a borda e sombra */
+}
+
+/* === EFEITOS NOS CAMPOS === */
+input:focus {
+  border-color: var(--vermelho-queimado); /* Cor da borda ao focar */
+  outline: none; /* Remove contorno padrão */
+  box-shadow: 0 0 8px var(--vermelho-queimado); /* Sombra ao focar */
+}
+
+/* === HEADER === */
+header {
+  background-color: var(--marrom-escuro); /* Cor de fundo do cabeçalho */
+  color: var(--bege-claro); /* Cor do texto do cabeçalho */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0; /* Alinha ao topo */
+  width: 100%; /* Largura total */
+  height: 80px; /* Altura do cabeçalho */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra ao redor do cabeçalho */
+  z-index: 1000; /* Coloca o cabeçalho acima de outros elementos */
+}
+
+/* === HEADER CONTAINER === */
+header .container {
+  max-width: 1100px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+  height: 100%; /* Altura total */
+  display: flex; /* Exibe como flexbox */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  justify-content: space-between; /* Espaça os itens horizontalmente */
+  padding: 0 20px; /* Preenchimento lateral */
+}
+
+/* === TÍTULO TOPO DA PÁGINA === */
+header h1 {
+  font-family: 'Pacifico', cursive; /* Fonte para o título */
+  font-size: 1.8rem; /* Tamanho da fonte */
+  letter-spacing: 2px; /* Espaçamento entre letras */
+  user-select: none; /* Impede a seleção do texto */
+}
+
+/* === CONFIGURAÇÃO DA LISTA === */
+header nav ul {
+  list-style: none; /* Remove marcadores da lista */
+  display: flex; /* Exibe como flexbox */
+  gap: 25px; /* Espaçamento entre itens da lista */
+}
+
+/* === ESTILIZAÇÃO DOS LINKS === */
+header nav ul li a {
+  color: var(--bege-claro); /* Cor do texto dos links */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: 600; /* Peso da fonte */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+/* === CONFIGURAÇÃO DOS LINKS === */
+header nav ul li a:hover,
+header nav ul li a:focus {
+  color: var(--laranja-terroso); /* Cor ao passar o mouse ou focar */
+  outline: none; /* Remove contorno padrão */
+}
+
+/* === LOGO E TÍTULO NO TOPO === */
+.logo-area {
+  display: flex; /* Exibe como flexbox */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  gap: 35px; /* Espaçamento entre itens */
+}
+
+/* === LOGO === */
+.logo {
+  height: 55px; /* Altura da logo */
+  width: auto; /* Largura automática */
+  max-width: 80px; /* Largura máxima */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 5px 15px rgba(136, 131, 128, 0.3); /* Sombra ao redor da logo */
+  object-fit: contain; /* Ajusta a imagem dentro do contêiner */
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+main {
+  max-width: 700px; /* Largura máxima do conteúdo principal */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  background-color: rgba(244, 237, 227, 0.95); /* Fundo translúcido */
+  padding: 30px; /* Preenchimento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3); /* Sombra ao redor do conteúdo */
+}
+
+/* === BOTÃO === */
+button {
+  margin-top: 30px; /* Margem superior */
+  width: 100%; /* Largura total */
+  padding: 14px; /* Preenchimento interno */
+  background-color: rgb(53, 218, 11); /* Cor de fundo */
+  color: var(--bege-claro); /* Cor do texto */
+  border: none; /* Sem borda */
+  border-radius: 15px; /* Bordas arredondadas */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  font-weight: 700; /* Negrito */
+  cursor: pointer; /* Cursor de ponteiro */
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Sombra do texto */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* === BOTÃO APÓS MOUSE PASSAR === */
+button:hover {
+  background-color: rgb(29, 110, 4); /* Cor de fundo ao passar o mouse */
+}
+
+/* === MENSAGEM DE ERRO === */
+#erro {
+  color: var(--vermelho-queimado); /* Cor do texto de erro */
+  margin-top: 15px; /* Margem superior */
+  text-align: center; /* Centraliza o texto */
+  font-weight: bold; /* Negrito */
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--marrom-escuro); /* Cor de fundo do rodapé */
+  color: var(--bege-claro); /* Cor do texto do rodapé */
+  text-align: center; /* Centraliza o texto */
+  position: fixed; /* Fixa o rodapé na parte inferior */
+  bottom: 0; /* Alinha ao fundo */
+  width: 100%; /* Largura total */
+  height: 50px; /* Altura do rodapé */
+  display: flex; /* Exibe como flexbox */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.3); /* Sombra ao redor do rodapé */
+  user-select: none; /* Impede a seleção do texto */
+}
+
+/* === FOOTER CONTAINER === */
+footer .container {
+  max-width: 1100px; /* Largura máxima do container */
+  width: 100%; /* Largura total */
+  padding: 0 20px; /* Preenchimento lateral */
+}
