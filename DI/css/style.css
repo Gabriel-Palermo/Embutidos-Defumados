@@ -1,396 +1,413 @@
-/* === RESET E VARIÁVEIS === */
+/* === RESET E VARIÁVEIS | CSS Principal === */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimento padrão */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total */
 }
 
 /* === CORES DA PÁGINA === */
 :root {
-  --marrom-escuro: #5a2e0c;
-  --vermelho-queimado: #a83226;
-  --bege-claro: #f4ede3;
-  --laranja-terroso: #d96c3b;
-  --texto-escuro: #3b2f2f;
-  --fundo-textura: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  --marrom-escuro: #5a2e0c; /* Cor marrom escuro */
+  --vermelho-queimado: #a83226; /* Cor vermelho queimado */
+  --bege-claro: #f4ede3; /* Cor bege claro */
+  --laranja-terroso: #d96c3b; /* Cor laranja terroso */
+  --texto-escuro: #3b2f2f; /* Cor do texto escuro */
+  --fundo-textura: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Imagem de fundo */
 }
 
 /* === FONTE TÍTULOS === */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap'); /* Importa fontes do Google Fonts */
 
 /* === CORPO === */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
-  background-color: var(--bege-claro);
-  background-image: var(--fundo-textura);
-  color: var(--texto-escuro);
-  line-height: 1.6;
-  padding-top: 120px; /* espaço para header fixo */
-  padding-bottom: 60px; /* espaço para footer */
+  font-family: 'Roboto', Arial, sans-serif; /* Define a fonte do corpo */
+  background-color: var(--bege-claro); /* Cor de fundo */
+  background-image: var(--fundo-textura); /* Imagem de fundo */
+  color: var(--texto-escuro); /* Cor do texto */
+  line-height: 1.6; /* Altura da linha */
+  padding-top: 120px; /* Espaço para o header fixo */
+  padding-bottom: 60px; /* Espaço para o footer */
 }
 
-/* === HEADER === */
+/* === HEADER topo da página === */
 header {
-  background-color: var(--marrom-escuro);
-  color: var(--bege-claro);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  z-index: 1000;
+  background-color: var(--marrom-escuro); /* Cor de fundo do cabeçalho */
+  color: var(--bege-claro); /* Cor do texto do cabeçalho */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0; /* Alinha ao topo */
+  width: 100%; /* Largura total */
+  height: 80px; /* Altura do cabeçalho */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra ao redor do cabeçalho */
+  z-index: 1000; /* Coloca o cabeçalho acima de outros elementos */
 }
 
 /* === HEADER CONTAINER=== */
 header .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  max-width: 1100px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+  height: 100%; /* Altura total */
+  display: flex; /* Exibe como flexbox */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  justify-content: space-between; /* Espaça os itens horizontalmente */
+  padding: 0 20px; /* Preenchimento lateral */
 }
 
+/* - H1 - */
 header h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  user-select: none;
+  font-family: 'Pacifico', cursive; /* Fonte para o título */
+  font-size: 1.8rem; /* Tamanho da fonte */
+  letter-spacing: 2px; /* Espaçamento entre letras */
+  user-select: none; /* Impede a seleção do texto */
 }
 
+/* - Lista - */
 header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+  list-style: none; /* Remove marcadores da lista */
+  display: flex; /* Exibe como flexbox */
+  gap: 25px; /* Espaçamento entre itens da lista */
 }
 
+/* - Links - */
 header nav ul li a {
-  color: var(--bege-claro);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  color: var(--bege-claro); /* Cor do texto dos links */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: 600; /* Peso da fonte */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: color 0.3s ease; /* Transição suave para a cor */
 }
 
+/* - Mudar cores texto Link - */
 header nav ul li a:hover,
 header nav ul li a:focus {
-  color: var(--laranja-terroso);
-  outline: none;
+  color: var(--laranja-terroso); /* Cor ao passar o mouse ou focar */
+  outline: none; /* Remove contorno padrão */
 }
 
 /* === CONTAINER PRINCIPAL === */
 main {
-  max-width: 700px;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  background-color: rgba(244, 237, 227, 0.95); /* fundo translúcido */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3);
+  max-width: 700px; /* Largura máxima do conteúdo principal */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  margin-bottom: 40px; /* Margem inferior */
+  background-color: rgba(244, 237, 227, 0.95); /* Fundo translúcido */
+  padding: 30px; /* Preenchimento interno */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3); /* Sombra ao redor do conteúdo */
 }
 
 /* === TÍTULO PRINCIPAL DA PÁGINA === */
 main h2 {
-  font-family: 'Pacifico', cursive;
-  text-align: center;
-  margin-bottom: 35px;
-  font-size: 2.5rem;
-  color: var(--marrom-escuro);
-  text-shadow: 1px 1px 2px var(--laranja-terroso);
+  font-family: 'Pacifico', cursive; /* Fonte para o título */
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 35px; /* Margem inferior */
+  font-size: 2.5rem; /* Tamanho da fonte */
+  color: var(--marrom-escuro); /* Cor do texto */
+  text-shadow: 1px 1px 2px var(--laranja-terroso); /* Sombra do texto */
 }
 
 /* === FORMULÁRIO === */
 form fieldset {
-  border: none;
-  padding: 0;
+  border: none; /* Remove a borda do fieldset */
+  padding: 0; /* Remove o preenchimento */
 }
 
 /* === LEGENDA DO FORMULÁRIO === */
 form legend {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: var(--marrom-escuro);
-  border-bottom: 2px solid var(--laranja-terroso);
-  padding-bottom: 5px;
+  font-size: 1.5rem; /* Tamanho da fonte */
+  margin-bottom: 20px; /* Margem inferior */
+  font-weight: bold; /* Negrito */
+  color: var(--marrom-escuro); /* Cor do texto */
+  border-bottom: 2px solid var(--laranja-terroso); /* Borda inferior */
+  padding-bottom: 5px; /* Preenchimento inferior */
 }
 
+/* - Campo - */
 .campo {
-  margin-bottom: 22px;
+  margin-bottom: 22px; /* Margem inferior */
 }
 
+/* - Campo para Digitar - */
 label {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--marrom-escuro);
-  letter-spacing: 0.02em;
+  display: block; /* Exibe como bloco */
+  font-weight: 700; /* Negrito */
+  margin-bottom: 8px; /* Margem inferior */
+  color: var(--marrom-escuro); /* Cor do texto */
+  letter-spacing: 0.02em; /* Espaçamento entre letras */
 }
 
+/* - Estilização Campo de Digitar - */
 input,
 select,
 textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid var(--laranja-terroso);
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-family: 'Roboto', sans-serif;
-  transition: border-color 0.3s ease;
-  background-color: #fff8f0;
-  color: var(--marrom-escuro);
-  transition: all 0.3s ease;
+  width: 100%; /* Largura total */
+  padding: 12px; /* Preenchimento interno */
+  border: 2px solid var(--laranja-terroso); /* Borda */
+  border-radius: 12px; /* Bordas arredondadas */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  font-family: 'Roboto', sans-serif; /* Fonte */
+  transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
+  background-color: #fff8f0; /* Cor de fundo */
+  color: var(--marrom-escuro); /* Cor do texto */
 }
 
+/* - Após foco - */
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: var(--vermelho-queimado);
-  outline: none;
-  box-shadow: 0 0 8px var(--vermelho-queimado);
+  border-color: var(--vermelho-queimado); /* Cor da borda ao focar */
+  outline: none; /* Remove contorno padrão */
+  box-shadow: 0 0 8px var(--vermelho-queimado); /* Sombra ao focar */
 }
 
+/* - Botões - */
 .botoes {
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-  margin-top: 30px;
-  flex-wrap: wrap;
+  display: flex; /* Exibe como flexbox */
+  justify-content: flex-end; /* Alinha à direita */
+  gap: 20px; /* Espaçamento entre botões */
+  margin-top: 30px; /* Margem superior */
 }
 
 /* === BOTÃO === */
 button[type="submit"] {
-  background-color: rgb(53, 218, 11);
-  color: var(--bege-claro);
-  flex: 2;
-  max-width: 490px;
-  font-size: 1.1rem;
-  padding: 14px;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3);
-  cursor: pointer;
-  font-weight: 700;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  background-color: rgb(53, 218, 11); /* Cor de fundo */
+  color: var(--bege-claro); /* Cor do texto */
+  flex: 2; /* Ocupa 2 partes do espaço */
+  max-width: 490px; /* Largura máxima */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  padding: 14px; /* Preenchimento interno */
+  border: none; /* Sem borda */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3); /* Sombra ao redor do botão */
+  cursor: pointer; /* Cursor de ponteiro */
+  font-weight: 700; /* Negrito */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
 }
 
 /* === BOTÃO APÓS MOUSE PASSAR EM CIMA === */
 button[type="submit"]:hover {
-  background-color: rgb(29, 110, 4);
+  background-color: rgb(29, 110, 4); /* Cor de fundo ao passar o mouse */
 }
 
 /* === BOTÃO === */
 button[type="cancel"] {
-  background-color: rgb(218, 27, 27);
-  color: var(--bege-claro);
-  flex: 1;
-  max-width: 180px;
-  font-size: 1.1rem;
-  padding: 14px;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3);
-  cursor: pointer;
-  font-weight: 700;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  background-color: rgb(218, 27, 27); /* Cor de fundo */
+  color: var(--bege-claro); /* Cor do texto */
+  flex: 1; /* Ocupa 1 parte do espaço */
+  max-width: 180px; /* Largura máxima */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  padding: 14px; /* Preenchimento interno */
+  border: none; /* Sem borda */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 5px 15px rgba(90, 46, 12, 0.3); /* Sombra ao redor do botão */
+  cursor: pointer; /* Cursor de ponteiro */
+  font-weight: 700; /* Negrito */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
 }
 
 /* === BOTÃO APÓS MOUSE PASSAR EM CIMA === */
 button[type="cancel"]:hover {
-  background-color: rgb(153, 23, 6);
+  background-color: rgb(153, 23, 6); /* Cor de fundo ao passar o mouse */
 }
 
 /* === MENSAGENS === */
 #mensagem {
-  margin-top: 20px;
-  font-weight: bold;
-  color: var(--vermelho-queimado);
+  margin-top: 20px; /* Margem superior */
+  font-weight: bold; /* Negrito */
+  color: var(--vermelho-queimado); /* Cor do texto */
 }
 
 /* === INSTRUÇÕES === */
 small {
-  display: block;
-  margin-top: 6px;
-  color: var(--marrom-escuro);
-  font-style: italic;
+  display: block; /* Exibe como bloco */
+  margin-top: 6px; /* Margem superior */
+  color: var(--marrom-escuro); /* Cor do texto */
+  font-style: italic; /* Estilo itálico */
 }
 
 /* === LOGO E TÍTULO NO TOPO === */
 .logo-area {
-  display: flex;
-  align-items: center;
-  gap: 35px;
+  display: flex; /* Exibe como flexbox */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  gap: 35px; /* Espaçamento entre itens */
 }
 
 /* === LOGO === */
 .logo {
-  height: 55px;
-  width: auto;
-  max-width: 80px;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(136, 131, 128, 0.3);
-  object-fit: contain;
-  transition: all 0.3s ease;
+  height: 55px; /* Altura da logo */
+  width: auto; /* Largura automática */
+  max-width: 80px; /* Largura máxima */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 5px 15px rgba(136, 131, 128, 0.3); /* Sombra ao redor da logo */
+  object-fit: contain; /* Ajusta a imagem dentro do contêiner */
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
 }
 
 /* === DASHBOARD === */
 .resumo-item {
-  flex: 1;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(90, 46, 12, 0.25);
-  color: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  flex: 1; /* O item ocupa o espaço disponível */
+  padding: 20px; /* Preenchimento interno */
+  margin-bottom: 20px; /* Margem inferior */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(90, 46, 12, 0.25); /* Sombra ao redor do item */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  position: relative; /* Posição relativa */
+  overflow: hidden; /* Oculta bordas que ultrapassam o limite */
+  transition: transform 0.3s ease; /* Transição suave para a transformação */
 }
 
+/* - Dashboard Após mouse passar - */
 .resumo-item:hover {
-  transform: scale(1.02);
+  transform: scale(1.02); /* Aumenta o tamanho ao passar o mouse */
 }
 
+/* - H3 Estilização - */
 .resumo-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  color: white;
-  position: relative;
-  z-index: 1;
+  font-size: 1.2rem; /* Tamanho da fonte */
+  margin-bottom: 8px; /* Margem inferior */
+  color: white; /* Cor do texto */
+  position: relative; /* Posição relativa */
+  z-index: 1; /* Índice de empilhamento */
 }
 
+/* - Paragrafo Estilização - */
 .resumo-item p {
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: white;
-  position: relative;
-  z-index: 1;
+  font-size: 2.4rem; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  color: white; /* Cor do texto */
+  position: relative; /* Posição relativa */
+  z-index: 1; /* Índice de empilhamento */
 }
 
 /* === FILTROS === */
 .filtros {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margem inferior */
 }
 
+/* - Texto do Filtros - */
 .filtros label {
-  font-weight: bold;
-  color: var(--marrom-escuro);
-  margin-right: 10px;
+  font-weight: bold; /* Negrito */
+  color: var(--marrom-escuro); /* Cor do texto */
+  margin-right: 10px; /* Margem à direita */
 }
 
+/* - Filtro Input - */
 .filtros input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 2px solid var(--laranja-terroso);
-  width: 60%;
-  font-size: 1rem;
+  padding: 10px; /* Preenchimento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  border: 2px solid var(--laranja-terroso); /* Borda */
+  width: 60%; /* Largura do campo */
 }
 
 /* === TABELA === */
 .tabela-estoque table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff8f0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(90, 46, 12, 0.2);
+  width: 100%; /* Largura total da tabela */
+  border-collapse: collapse; /* Remove espaços entre as bordas das células */
+  background-color: #fff8f0; /* Cor de fundo da tabela */
+  border-radius: 12px; /* Bordas arredondadas */
+  overflow: hidden; /* Oculta bordas que ultrapassam o limite */
+  box-shadow: 0 4px 10px rgba(90, 46, 12, 0.2); /* Sombra ao redor da tabela */
 }
 
+/* - Configuração Tabela - */
 .tabela-estoque th,
 .tabela-estoque td {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--laranja-terroso);
-  text-align: left;
+  padding: 12px 16px; /* Espaçamento interno das células */
+  border-bottom: 1px solid var(--laranja-terroso); /* Borda inferior das células */
+  text-align: left; /* Alinhamento do texto à esquerda */
 }
 
+/* - Estilização Tabela - */
 .tabela-estoque th {
-  background-color: var(--marrom-escuro);
-  color: var(--bege-claro);
-  font-weight: bold;
+  background-color: var(--marrom-escuro); /* Cor de fundo do cabeçalho */
+  color: var(--bege-claro); /* Cor do texto do cabeçalho */
+  font-weight: bold; /* Negrito */
 }
 
+/* - Tabela Após mouse passar - */
 .tabela-estoque tbody tr:hover {
-  background-color: #f4ede3;
+  background-color: #f4ede3; /* Cor de fundo ao passar o mouse */
 }
 
+/* - Divisão de Linhas Pares - */
 .tabela-estoque tbody tr:nth-child(even) {
-  background-color: #fef4ea;
+  background-color: #fef4ea; /* Cor de fundo das linhas pares */
 }
 
+/* - Divisão de Linhas Ímpares - */
 .tabela-estoque tbody tr:nth-child(odd) {
-  background-color: #fff8f0;
+  background-color: #fff8f0; /* Cor de fundo das linhas ímpares */
 }
 
+/* - Estilização Dashboard - */
 td.baixo-estoque {
-  background-color: rgba(255, 0, 0, 0.1);
-  color: #a83226;
-  font-weight: bold;
+  background-color: rgba(255, 0, 0, 0.1); /* Cor de fundo para baixo estoque */
+  color: #a83226; /* Cor do texto */
+  font-weight: bold; /* Negrito */
 }
 
 /* === FOOTER === */
 footer {
-  background-color: var(--marrom-escuro);
-  color: var(--bege-claro);
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  box-shadow: 0 -3px 8px rgba(0,0,0,0.3);
-  user-select: none;
+  background-color: var(--marrom-escuro); /* Cor de fundo do rodapé */
+  color: var(--bege-claro); /* Cor do texto do rodapé */
+  text-align: center; /* Centraliza o texto */
+  position: fixed; /* Fixa o rodapé na parte inferior */
+  bottom: 0; /* Alinha ao fundo */
+  width: 100%; /* Largura total */
+  height: 50px; /* Altura do rodapé */
+  display: flex; /* Exibe como flexbox */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.3); /* Sombra ao redor do rodapé */
+  user-select: none; /* Impede a seleção do texto */
 }
 
 /* === FOOTER CONTAINER === */
 footer .container {
-  max-width: 1100px;
-  width: 100%;
-  padding: 0px 20px;
+  max-width: 1100px; /* Largura máxima do container */
+  width: 100%; /* Largura total */
+  padding: 0px 20px; /* Preenchimento lateral */
 }
 
 /* === MENSAGEM SUCESSO === */
 #mensagem.sucesso {
-  color: green;
-  text-align: right;
-  animation: fadeIn 0.5s ease;
+  color: green; /* Cor do texto de sucesso */
+  text-align: right; /* Alinhamento à direita */
+  animation: fadeIn 0.5s ease; /* Animação de fade-in */
 }
 
-/* === FLAMES DE CHAVES === */
+/* === ANIMAÇÃO DE FADE IN === */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-10px); } /* Começa invisível e acima */
+  to { opacity: 1; transform: translateY(0); } /* Termina visível e na posição original */
 }
 
 /* === RESPONSIVO === */
 @media (max-width: 600px) {
   body {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 120px; /* Espaço para o header fixo */
+    padding-bottom: 80px; /* Espaço para o footer */
   }
   main {
-    padding: 20px;
+    padding: 20px; /* Preenchimento do conteúdo principal */
   }
 
   main h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Tamanho da fonte do título principal */
   }
 
   header .container {
-    flex-direction: column;
-    height: auto;
-    padding: 10px 20px;
-    gap: 10px;
+    flex-direction: column; /* Alinha itens em coluna */
+    height: auto; /* Altura automática */
+    padding: 10px 20px; /* Preenchimento lateral */
+    gap: 10px; /* Espaçamento entre itens */
   }
 
   header nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: center; /* Centraliza os itens */
+    gap: 15px; /* Espaçamento entre itens */
   }
 }
